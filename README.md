@@ -39,7 +39,7 @@ Final score: 0.978
 
 | Model                    | Score     | F1 OVERLAP | F1 EXACT   |    Time | 
 |--------------------------|----------:|-----------:|-----------:|--------:|  
-| PolDeepNer2              |     97.80 |      99.20 |     91.90  |  ~  5 m |
+| PolDeepNer2              |           |            |            |  ~  5 m |
 | Dadas et al. 2020 [1]    |     88.60 |      89.00 |     87.00  |     n/a |
 | [NER model for SpacyPL](https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer)    |     87.52 |          n/a |          n/a |  n/a |
 | Polish RoBERTa (large) [1]|      n/a |        n/a |     87.94  |     n/a |
