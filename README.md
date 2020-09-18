@@ -30,9 +30,10 @@ Evaluation
 ### PolEval 2018 (NKJP NER model)
 
 ```
-OVERLAP precision: 0.997 recall: 0.987 F1: 0.992 
-EXACT precision: 0.923 recall: 0.914 F1: 0.919 
-Final score: 0.978
+Nr of documents identified by ID in both data sets: 1828, not identified (left out): 0
+OVERLAP precision: 0.908 recall: 0.874 F1: 0.891 
+EXACT precision: 0.864 recall: 0.831 F1: 0.847 
+Final score: 0.882
 ```
 
 *Comparision with other models*
