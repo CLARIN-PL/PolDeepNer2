@@ -37,7 +37,7 @@ Models
 | Dadas et al. 2020 [1]     |      88.6 |       87.0 |      89.0 |          - |        - |        - | [link](https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition) |
 | Polish RoBERTa (large) [1]|         - |          - |         - |      89.98 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
 | Polish RoBERTa (base) [1] |         - |          - |         - |      87.94 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
-| spaCy (pl_core_news_lg)   |         - |          - |         - |      87.50 |     ~3 m |        - | [link](https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer) |
+| spaCy (pl_spacy_model)    |         - |          - |         - |      87.50 |     ~3 m |        - | [link](https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer) |
 | --- Top 3 systems from PolEval 2018 ---|
 | Applica.ai                |      86.6 |       87.7 |      82.6 |          - |        - |        - | [link](https://github.com/applicaai/poleval-2018)
 | PolDeepNer                |      85.1 |       85.9 |      82.2 |          - |        - |   ~9.0 m | [link](https://github.com/CLARIN-PL/PolDeepNer)
