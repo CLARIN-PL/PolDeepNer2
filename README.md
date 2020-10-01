@@ -33,12 +33,12 @@ Models
 | Model                     | Score     | F1 Overlap | F1 Exact  | Score main | Time CPU | Time GPU | Source | 
 |---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
 | *PolDeepNer2* (nkjp_base) |      90.0 |       90.5 |      87.7 |      92.40 |          |   ~6.5 m |        | 
-| --- Results published after PolEval 2018 ---|
+| __Systems published after PolEval 2018__|
 | Dadas et al. 2020 [1]     |      88.6 |       87.0 |      89.0 |          - |        - |        - | [link](https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition) |
 | Polish RoBERTa (large) [1]|         - |          - |         - |      89.98 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
 | Polish RoBERTa (base) [1] |         - |          - |         - |      87.94 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
 | spaCy (pl_spacy_model)    |         - |          - |         - |      87.50 |     ~3 m |        - | [link](https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer) |
-| --- Top 3 systems from PolEval 2018 ---|
+| __Top 3 systems from PolEval 2018__|
 | Applica.ai                |      86.6 |       87.7 |      82.6 |          - |        - |        - | [link](https://github.com/applicaai/poleval-2018)
 | PolDeepNer                |      85.1 |       85.9 |      82.2 |          - |        - |   ~9.0 m | [link](https://github.com/CLARIN-PL/PolDeepNer)
 | Liner2                    |      81.0 |       81.8 |      77.8 |          - |     ~3 m |        - | [link](https://github.com/CLARIN-PL/Liner2)
