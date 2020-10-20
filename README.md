@@ -32,6 +32,7 @@ Models
 
 | Model                     | Score     | F1 Overlap | F1 Exact  | Score main | Time CPU | Time GPU | Source | 
 |---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
+| *PolDeepNer2* (nkjp_base_sq) |   91.7 |       92.2 |      89.8 |            |   ~1.5 h |   ~1.5 m |        | 
 | *PolDeepNer2* (nkjp_base) |      90.0 |       90.5 |      87.7 |      92.40 |   ~6.5 h |   ~6.5 m |        | 
 | __Systems published after PolEval 2018__|
 | Dadas et al. 2020 [1]     |      88.6 |       89.0 |      87.0 |          - |        - |        - | [link](https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition) |
