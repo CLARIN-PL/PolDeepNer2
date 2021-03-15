@@ -28,6 +28,9 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
 
 ![NKJP NER categories](docs/media/nkjp-ner-schema.png) 
 
+<style>
+    tr.section td { background: cornflowerblue; }
+</style>
 
 <table>
     <thead>
@@ -43,54 +46,114 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="section">
             <td colspan="8"><b>PolDeepNer2</b></td>
         </tr>
         <tr>
+            <td>PolDeepNer2 (nkjp_large_sq_herbert, spacy-ext)</td>
+            <td>92.1</td>
+            <td>92.7</td>
+            <td>89.9</td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>~4.7 m</td>
             <td></td>
         </tr>
         <tr>
+            <td>PolDeepNer2 (nkjp_base_sq, spacy-ext)</td>
+            <td>91.4</td>
+            <td>91.9</td>
+            <td>89.1</td>
+            <td></td>
+            <td>~1.5 h</td>
+            <td>~1.5 m</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>PolDeepNer2 (nkjp_base, spacy-ext)</td>
+            <td>90.0</td>
+            <td>90.5</td>
+            <td>87.7</td>
+            <td>92.40</td>
+            <td>~6.5 h</td>
+            <td>~6.5 m</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>PolDeepNer2 (nkjp_base)</td>
+            <td>89.8</td>
+            <td>87.4</td>
+            <td>90.4</td>
+            <td>92.20</td>
+            <td></td>
+            <td>~8.2 m</td>
+            <td></td>
+        </tr>
+        <tr class="section">
             <td colspan="8"><b>Systems published after PolEval 2018</b></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Dadas et al. 2020 [1]</td>
+            <td>88.6</td>
+            <td>87.0</td>
+            <td>89.0</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition">link</a></td>
         </tr>
         <tr>
+            <td>Polish RoBERTa (large) [1]</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>89.98</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="https://github.com/sdadas/polish-roberta">link</a></td>
+        </tr>
+        <tr>
+            <td>Polish RoBERTa (base) [1]</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>87.94</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="https://github.com/sdadas/polish-roberta">link</a></td>
+        </tr>
+        <tr>
+            <td>spaCy (pl_spacy_model) </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>87.50</td>
+            <td>~3 m</td>
+            <td>-</td>
+            <td><a href="https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer">link</a></td>
+        </tr>
+        <tr class="section">
             <td colspan="8"><b>Top 3 systems from PolEval 2018</b></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Applica.ai </td>
+            <td>86.6</td>
+            <td>87.7 </td>
+            <td>82.6</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="https://github.com/applicaai/poleval-2018">link</a></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>PolDeepNer</td>
+            <td>85.1</td>
+            <td>85.9</td>
+            <td>82.2</td>
+            <td>-</td>
+            <td>-</td>
+            <td>~9.0 m</td>
+            <td><a href="https://github.com/CLARIN-PL/PolDeepNer">link</a></td>
         </tr>
         <tr>
             <td>Liner2</td>
@@ -104,25 +167,6 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
         </tr>
     </tbody>
 </table>
-
-*Comparision with other models*
-
-| Model                     | Score     | F1 Overlap | F1 Exact  | Score main | Time CPU | Time GPU | Source | 
-|---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
-|---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
-| *PolDeepNer2* (nkjp_large_sq_herbert, spacy-ext)  |   92.1 | 92.7 |      89.9 |            |          |   ~4.7 m |        | 
-| *PolDeepNer2* (nkjp_base_sq, spacy-ext)           |   91.4 | 91.9 |      89.1 |            |   ~1.5 h |   ~1.5 m |        | 
-| *PolDeepNer2* (nkjp_base)                         |   90.0 | 90.5 |      87.7 |      92.40 |   ~6.5 h |   ~6.5 m |        | 
-| *PolDeepNer2* (nkjp_base, spacy-ext)              |   89.8 | 87.4 |      90.4 |      92.20 |          |   ~8.2 m |        | 
-| Systems published after PolEval 2018                                                                      ||
-| Dadas et al. 2020 [1]     |      88.6 |       87.0 |      89.0 |          - |        - |        - | [link](https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition) |
-| Polish RoBERTa (large) [1]|         - |          - |         - |      89.98 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
-| Polish RoBERTa (base) [1] |         - |          - |         - |      87.94 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
-| spaCy (pl_spacy_model)    |         - |          - |         - |      87.50 |     ~3 m |        - | [link](https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer) |
-| __Top 3 systems from PolEval 2018__|
-| Applica.ai                |      86.6 |       87.7 |      82.6 |          - |        - |        - | [link](https://github.com/applicaai/poleval-2018)
-| PolDeepNer                |      85.1 |       85.9 |      82.2 |          - |        - |   ~9.0 m | [link](https://github.com/CLARIN-PL/PolDeepNer)
-| Liner2                    |      81.0 |       81.8 |      77.8 |          - |     ~3 m |        - | [link](https://github.com/CLARIN-PL/Liner2)
 
 [1] The model is not available. Only the evaluation results were published.   
 
