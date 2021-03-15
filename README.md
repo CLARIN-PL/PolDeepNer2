@@ -10,13 +10,24 @@ It contains a pre-trained model trained on the [NKJP corpus](http://clip.ipipan.
 which recognizes nested annotations of the following types:
 
 
-
-
-
 Contributors
 ------------
 * Michał Marcińczuk <marcinczuk@gmail.com>
 * Jarema Radom
+
+
+Notebooks
+----------
+
+<table>
+    <tr>
+        <td><pre>notebooks/pdn2_cpu.py</pre></td>
+        <td>This notebook present how to install and use module API to process a raw text on CPU.</td>
+        <td><a href="https://colab.research.google.com/github/CLARIN-PL/PolDeepNer2/blob/master/notebooks/pdn2_cpu.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" title="Open In Colab"/></a></td>
+    </tr>
+</table>
+
 
 
 Models
@@ -27,10 +38,6 @@ Models
 PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset. 
 
 ![NKJP NER categories](docs/media/nkjp-ner-schema.png) 
-
-<style>
-    tr.section td { background: cornflowerblue; }
-</style>
 
 <table>
     <thead>
