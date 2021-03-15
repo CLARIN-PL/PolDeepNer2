@@ -109,8 +109,11 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
 
 | Model                     | Score     | F1 Overlap | F1 Exact  | Score main | Time CPU | Time GPU | Source | 
 |---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
-| *PolDeepNer2* (nkjp_base_sq, spacy-ext)| 91.4 | 89.9 |    92.7 |      94.00 |          |    2.2 m |        |
-| *PolDeepNer2* (nkjp_base) |      90.0 |       90.5 |      87.7 |      92.40 |          |   ~6.5 m |        | 
+|---------------------------|----------:|-----------:|----------:|-----------:|---------:|---------:|--------|  
+| *PolDeepNer2* (nkjp_large_sq_herbert, spacy-ext)  |   92.1 | 92.7 |      89.9 |            |          |   ~4.7 m |        | 
+| *PolDeepNer2* (nkjp_base_sq, spacy-ext)           |   91.4 | 91.9 |      89.1 |            |   ~1.5 h |   ~1.5 m |        | 
+| *PolDeepNer2* (nkjp_base)                         |   90.0 | 90.5 |      87.7 |      92.40 |   ~6.5 h |   ~6.5 m |        | 
+| *PolDeepNer2* (nkjp_base, spacy-ext)              |   89.8 | 87.4 |      90.4 |      92.20 |          |   ~8.2 m |        | 
 | Systems published after PolEval 2018                                                                      ||
 | Dadas et al. 2020 [1]     |      88.6 |       87.0 |      89.0 |          - |        - |        - | [link](https://www.researchgate.net/publication/343170155_A_Bidirectional_Iterative_Algorithm_for_Nested_Named_Entity_Recognition) |
 | Polish RoBERTa (large) [1]|         - |          - |         - |      89.98 |        - |        - | [link](https://github.com/sdadas/polish-roberta)
