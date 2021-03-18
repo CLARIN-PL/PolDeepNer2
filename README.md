@@ -57,7 +57,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td colspan="8"><b>PolDeepNer2</b></td>
         </tr>
         <tr>
-            <td>Herbert large, spacy-ext, sq</td>
+            <td>HerBERT large, spacy-ext, sq</td>
             <td>92.1</td>
             <td>92.7</td>
             <td>89.9</td>
