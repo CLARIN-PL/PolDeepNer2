@@ -57,7 +57,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td colspan="8"><b>PolDeepNer2</b></td>
         </tr>
         <tr>
-            <td>PolDeepNer2 (nkjp_large_sq_herbert, spacy-ext)</td>
+            <td>Herbert large, spacy-ext, sq</td>
             <td>92.1</td>
             <td>92.7</td>
             <td>89.9</td>
@@ -67,7 +67,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td></td>
         </tr>
         <tr>
-            <td>PolDeepNer2 (nkjp_base_sq, spacy-ext)</td>
+            <td>Polish RoBERTa base, spacy-ext, sq</td>
             <td>91.4</td>
             <td>91.9</td>
             <td>89.1</td>
@@ -77,7 +77,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td></td>
         </tr>
         <tr>
-            <td>PolDeepNer2 (nkjp_base, spacy-ext)</td>
+            <td>Polish RoBERTa base, toki</td>
             <td>90.0</td>
             <td>90.5</td>
             <td>87.7</td>
@@ -87,10 +87,10 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td></td>
         </tr>
         <tr>
-            <td>PolDeepNer2 (nkjp_base)</td>
+            <td>Polish RoBERTa base, spacy-ext</td>
             <td>89.8</td>
-            <td>87.4</td>
             <td>90.4</td>
+            <td>87.4</td>
             <td>92.20</td>
             <td></td>
             <td>~8.2 m</td>
