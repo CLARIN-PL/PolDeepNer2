@@ -188,6 +188,8 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
 * Dataset size: 1828 document (3M characters).
 * GPU: RTX Titan (24 GB, 4608 CUDA cores).
 
+![NKJP NER times](docs/media/pdn2-nkjp-times.png) 
+
 ### N82 (KPWr and CEN)
 
 Inner-corpora evaluation
