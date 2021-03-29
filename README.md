@@ -63,7 +63,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>89.9</td>
             <td></td>
             <td></td>
-            <td>~4.7 m</td>
+            <td>~2m 24s</td>
             <td></td>
         </tr>
         <tr>
@@ -73,7 +73,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>89.1</td>
             <td></td>
             <td>~1.5 h</td>
-            <td>~1.5 m</td>
+            <td>~2m 8s</td>
             <td></td>
         </tr>
         <tr>
@@ -82,8 +82,8 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>90.5</td>
             <td>87.7</td>
             <td>92.40</td>
-            <td>~6.5 h</td>
-            <td>~6.5 m</td>
+            <td>~6h 30m</td>
+            <td>~6m 30s</td>
             <td></td>
         </tr>
         <tr>
@@ -93,7 +93,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>87.4</td>
             <td>92.20</td>
             <td></td>
-            <td>~8.2 m</td>
+            <td>~8m 2s</td>
             <td></td>
         </tr>
         <tr class="section">
@@ -135,7 +135,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>-</td>
             <td>-</td>
             <td>87.50</td>
-            <td>~3 m</td>
+            <td>~3m</td>
             <td>-</td>
             <td><a href="https://github.com/ipipan/spacy-pl#user-content-named-entity-recognizer">link</a></td>
         </tr>
@@ -159,7 +159,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>82.2</td>
             <td>-</td>
             <td>-</td>
-            <td>~9.0 m</td>
+            <td>~9m</td>
             <td><a href="https://github.com/CLARIN-PL/PolDeepNer">link</a></td>
         </tr>
         <tr>
@@ -168,7 +168,7 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
             <td>81.8</td>
             <td>77.8</td>
             <td>-</td>
-            <td>~3 m</td>
+            <td>~3m</td>
             <td>-</td>
             <td><a href="https://github.com/CLARIN-PL/Liner2">link</a></td>
         </tr>
@@ -177,6 +177,16 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
 
 [1] The model is not available. Only the evaluation results were published.   
 
+#### Comparision of loading and processing times 
+
+| Model               | Library     | Tokenizer            |  Model loading [s] | Preprocessing [s] | NE recognition [s] | Total [s] |
+|:--------------------|:------------|----------------------|-------------------:|------------------:|-------------------:|-------:|
+| Polish RoBERTa base | fairseq     | -                    |  12.28 |   50.90 |  65.23 | 128.4 |  
+| HerBERT large       | HuggingFace | HerbertTokenizerFast |  18.44 |   50.83 | 103.70 | 173.0 |
+| HerBERT large       | HuggingFace | XLMTokenizer         |  18.33 |   51.42 | 177.50 | 247.3 |
+
+* Dataset size: 1828 document (3M characters).
+* GPU: RTX Titan (24 GB, 4608 CUDA cores).
 
 ### N82 (KPWr and CEN)
 
@@ -201,8 +211,124 @@ Cross-corpora evaluation
 | *PolDeepNer2* (cen_n82_base)   | KPWr   |     58.58 |  64.79 |     61.53 |    4430 | 
 | *PolDeepNer2* (cen_n82_large)  | KPWr   |     61.38 |  66.66 |     63.91 |    4430 |
 
+Installation (with Conda)
+-------
+
+Create and activate conda environment:
+
+```
+conda create -n pdn2 python=3.6
+conda activate pdn2
+```
+
+Install CUDA, CuDNN and Torch:
+
+```
+conda install -c anaconda cudatoolkit=10.1
+conda install -c anaconda cudnn
+```
+
+Install PolDeepNer2:
+
+```
+pip install https://pypi.clarin-pl.eu/packages/poldeepner2-0.5.0-py3-none-any.whl#md5=6a6131d1b3d104f0bbed87ec6969a841
+```
+
+Install spacy model
+
+```
+python -m spacy download pl_core_news_sm
+```
+
+Evaluation
+----------
+
+Download evaluation dataset
+
+```
+wget http://mozart.ipipan.waw.pl/~axw/poleval2018/POLEVAL-NER_GOLD.json -O POLEVAL-NER_GOLD.json
+```
+
+## Polish RoBERTa
+
+Process the dataset:
+```
+python process_poleval.py \
+  --input POLEVAL-NER_GOLD.json \
+  --output pdn2_nkjp_roberta_base_sq.json \
+  --model nkjp-base-sq \
+  --device cuda:0
+```
+
+Output:
+```
+Model loading time          :    12.28 second(s)
+Data preprocessing time     :     50.9 second(s)
+Data NE recognition time    :    65.23 second(s)
+Total time                  :    128.4 second(s)
+Data size:                  :    3.072M characters
+```
+
+Evaluate:
+```
+python poleval_ner_test.py \
+  --goldfile POLEVAL-NER_GOLD.json \
+  --userfile pdn2_nkjp_roberta_base_sq.json
+```
+
+Output:
+```
+OVERLAP precision: 0.927 recall: 0.912 F1: 0.919 
+EXACT precision: 0.899 recall: 0.884 F1: 0.891 
+Final score: 0.914
+Exact TP=32971 ; FP=3709; FN=4335
+```
+
+## HerBERT
+
+Process the dataset:
+
+```
+python process_poleval.py \
+  --input POLEVAL-NER_GOLD.json \
+  --output pdn2_nkjp_herbert_large_sq.json \
+  --model nkjp-herbert-large-sq \
+  --device cuda:0
+```
+
+Output:
+
+```
+Model loading time          :    18.44 second(s)
+Data preprocessing time     :    50.83 second(s)
+Data NE recognition time    :    103.7 second(s)
+Total time                  :    173.0 second(s)
+Data size:                  :    3.072M characters
+```
+
+Evaluate:
+
+```
+python poleval_ner_test.py \
+  --goldfile POLEVAL-NER_GOLD.json \
+  --userfile pdn2_nkjp_herbert_large_sq.json
+```
+
+Output:
+
+```
+OVERLAP precision: 0.929 recall: 0.922 F1: 0.926 
+EXACT precision: 0.903 recall: 0.896 F1: 0.900 
+Final score: 0.921
+Exact TP=33433 ; FP=3596; FN=3873
+```
+
 
 Credits
 -------
-The implementation is based on [xlm-roberta-ner](https://github.com/mohammadKhalifa/xlm-roberta-ner) 
-and utilizes [Polish RoBERTa models](https://github.com/sdadas/polish-roberta). 
+
+* This code is based on [xlm-roberta-ner](https://github.com/mohammadKhalifa/xlm-roberta-ner) by mohammadKhalifa.
+* Language models for Polish:
+    * https://github.com/sdadas/polish-roberta
+    * https://huggingface.co/allegro/herbert-base-cased
+    * https://huggingface.co/allegro/herbert-large-cased 
