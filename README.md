@@ -190,6 +190,18 @@ PolDeepNer2 achieves the SOTA results on the PolEval 2018 dataset.
 
 ![NKJP NER times](docs/media/pdn2-nkjp-times.png) 
 
+#### Comparision of named entity recognition times for different datasets
+
+| 	| Size [Million chars]	| NER time [minutes] |
+|-----------------------------------------|---------:|---------:|
+| PolEval 2018 NER test dataset	          | 3	     | 2.6      |
+| Monthly volume of news from Polish news portals [70 sources]	| 160	| 136.9 |
+| Polish Wikipedia (2013 dump)	| 1000	| 855.6 |
+| Annual volume of news from Polish news portals [70 sources]	| 1920	| 1642.7 |
+
+![NKJP NER times](docs/media/pdn2-corpora-ner-times.png) 
+
+
 ### N82 (KPWr and CEN)
 
 Inner-corpora evaluation
